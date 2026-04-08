@@ -1,0 +1,15 @@
+name: second workflow
+on: push
+
+jobs:
+  multiple-commands:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checking out repo
+      uses: actions/checkout@v6
+
+    - name: running multiple commands
+      run: |
+        echo "trying to run multiple commands using pipe."
+        cat requirements.txt
+        pip install -r requirements.txt
